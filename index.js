@@ -1,9 +1,8 @@
-
 const regularfart = new Audio("fart.flac");
 const critfart = new Audio("fart.flac");
 const farts = [
     regularfart,
-    critFart,
+    critfart,
 ];
 let shaking = false;
 let counter = 0;
@@ -17,7 +16,7 @@ for (let fart of farts) {
 clickMe.onmousedown = () => {
     counter += 1;
     if (counter > 10) {
-        clickMe.innerText = "You unlocked the CRIT fart";
+        clickMe.innerText = "You broke it";
         critFart.currentTime = 0;
         critFart.play();
     } else if (counter > 3){
