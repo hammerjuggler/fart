@@ -1,8 +1,8 @@
-const regularfart = new Audio("fart.flac");
-const critfart = new Audio("fart.flac");
+const regularFart = new Audio("fart.flac");
+const critFart = new Audio("fart.flac");
 const farts = [
-    regularfart,
-    critfart,
+    regularFart,
+    critFart,
 ];
 let shaking = false;
 let counter = 0;
