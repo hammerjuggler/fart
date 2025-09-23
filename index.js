@@ -1,5 +1,19 @@
+
+const regularfart = new Audio("fart.flac");
+const critfart = new Audio("fart.flac");
+const farts = [
+    regularfart,
+    critFart,
+];
 let shaking = false;
-const fart = new Audio("fart.flac");
+let counter = 0;
+
+function finishFart() {
+    shaking = false;
+}
+for (let fart of farts) {
+    fart.onended = finishFart;
+};
 clickMe.onmousedown = () => {
     counter += 1;
     if (counter > 10) {
@@ -7,7 +21,7 @@ clickMe.onmousedown = () => {
         critFart.currentTime = 0;
         critFart.play();
     } else if (counter > 3){
-        clickMe.innerText = "Getting used to this";
+        clickMe.innerText = "oh you are into that!!";
         regularFart.currentTime = 0;
         regularFart.play();
     } else {
@@ -17,9 +31,7 @@ clickMe.onmousedown = () => {
     }
     shaking = true;
 };
-fart.onended = () => {
-    shaking = false;
-;}
+
 let prevTimestamp = 0;
 function frame(timestamp) {
     const deltaTime = (timestamp - prevTimestamp)/1000;
@@ -27,8 +39,11 @@ function frame(timestamp) {
     if (shaking) {
         const x = Math.random()*2 -1 + 50;
         const y = Math.random()*2 -1 + 50;
-        clickMe.style.left = '${x}%';
-        clickMe.style.top = '${y}%';
+        clickMe.style.left = `${x}%`;
+        clickMe.style.top = `${y}%`;
+    } else {
+        clickMe.style.left = "50%";
+        clickMe.style.top = "50%";
     }
     window.requestAnimationFrame(frame);
 };
