@@ -1,5 +1,5 @@
-const regularFart = new Audio("fart.flac");
-const critFart = new Audio("fart.flac");
+const regularFart = new Audio("regulartFart.flac");
+const critFart = new Audio("critFart.flac");
 const farts = [
     regularFart,
     critFart,
